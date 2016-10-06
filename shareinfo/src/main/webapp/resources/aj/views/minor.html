@@ -1,0 +1,60 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>File Manager App</h2>
+		<ol class="breadcrumb">
+			<li><a href="index.html">Home</a></li>
+			<li class="active"><strong>File Manager</strong></li>
+		</ol>
+	</div>
+	<div class="col-lg-2"></div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight"
+	ng-controller="nestableCtrl">
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="ibox ">
+				<div class="ibox-title">
+					<h2 class="text-center">Users</h2>
+				</div>
+				<div class="ibox-content">
+
+					<p>Select a user to display the list folders associated with
+						that user.</p>
+
+					<ul class="list-group">
+						<li class="list-group-item" ng-repeat="user in users" ui-sref-active="active">
+							<h3 class="text-center no-padding">
+								<a ng-click="loadFolders(user.id)">{{user.firstName}}</a>
+							</h3>
+						</li>
+						<li class="list-group-item" ng-click="changeTree()"> Test folder load</li>
+					</ul>
+					<!-- <js-tree tree-plugins="wholerow" tree-data="scope" tree-model="tree"> </js-tree> -->
+					<!-- <js-tree  tree-ajax="fileManager/3/folders"> </js-tree> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-9">
+
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h2>File Manager</h2>
+				</div>
+				<div class="ibox-content">
+					<div class="row">
+						<div class="col-sm-4">
+						<div  ng-show="showFolderHelp"><p class="text-center text-success"> Click on a user to display the folders.</p></div>
+							<js-tree tree-plugins="wholerow" tree-data="scope"
+								tree-model="tree"> </js-tree>
+						</div>
+						<div class="col-sm-8 border-left">
+							<p>To load folder content and file options</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
