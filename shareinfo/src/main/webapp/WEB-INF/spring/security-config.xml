@@ -61,14 +61,17 @@
 	<beans:bean id="encoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder" />
 
 	<authentication-manager alias="authenticationManager">
-		<authentication-provider user-service-ref="userDetailsService">
+<!-- <authentication-provider user-service-ref="userDetailsService"> -->
+		<authentication-provider>
 			<password-encoder ref="encoder" />
-			<!-- user-service>
+			<user-service>
 				<user name="admin" password="19b6fefd41f0040be31931fff3d648b2b0c3baef0e423bce0790ba750c55e1e3db83887934269303" authorities="ROLE_USER" />
 				<user name="utm01" password="6e9e6fb19c80c720cc742039cb6ac686a6532f41e377e28d40679a459d33767e838311e47d61a402" authorities="ROLE_USER" />
-			</user-service-->
+			</user-service>
 		</authentication-provider>
 	</authentication-manager>
-<beans:bean id="userDetailsService" class="com.jitworks.shareinfo.dao.jpa.UserAuthDAOImpl" />
+	
+	
+<!-- <beans:bean id="userDetailsService" class="com.jitworks.shareinfo.dao.jpa.UserAuthDAOImpl" /> -->
 	
 </beans:beans>
